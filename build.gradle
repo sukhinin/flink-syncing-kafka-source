@@ -1,0 +1,30 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+    id 'com.jfrog.bintray' version '1.8.4'
+    id 'fr.brouillard.oss.gradle.jgitver' version '0.6.1'
+}
+
+group 'com.github.sukhinin'
+description 'Synchronizing Kafka source for Apache Flink'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    implementation 'org.apache.flink:flink-connector-kafka_2.12:1.9.1'
+    compileOnly 'org.apache.flink:flink-streaming-java_2.12:1.9.1'
+}
+
+java {
+    withSourcesJar()
+}
+
+jgitver {
+    useDirty true
+    useGitCommitID true
+}
