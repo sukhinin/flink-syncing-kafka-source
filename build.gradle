@@ -28,3 +28,33 @@ jgitver {
     useDirty true
     useGitCommitID true
 }
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from components.java
+            pom {
+                name = project.name
+                description = project.description
+                url = 'https://github.com/sukhinin/flink-syncing-kafka-source'
+                licenses {
+                    license {
+                        name = 'Apache-2.0'
+                        url = 'https://github.com/sukhinin/flink-syncing-kafka-source/blob/master/LICENSE'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'sukhinin'
+                        name = 'Boris Sukhinin'
+                    }
+                }
+                scm {
+                    connection = 'scm:git:https://github.com/sukhinin/flink-syncing-kafka-source.git'
+                    developerConnection = 'scm:git:https://github.com/sukhinin/flink-syncing-kafka-source.git'
+                    url = 'https://github.com/sukhinin/flink-syncing-kafka-source'
+                }
+            }
+        }
+    }
+}
