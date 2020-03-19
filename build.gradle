@@ -58,3 +58,20 @@ publishing {
         }
     }
 }
+
+bintray {
+    user = project.findProperty('bintray.user') ?: System.getenv('BINTRAY_USER')
+    key = project.findProperty('bintray.apikey') ?: System.getenv('BINTRAY_APIKEY')
+    publications = ['maven']
+    pkg {
+        repo = 'maven'
+        name = project.name
+        desc = project.description
+        websiteUrl = 'https://github.com/sukhinin/flink-syncing-kafka-source'
+        issueTrackerUrl = 'https://github.com/sukhinin/flink-syncing-kafka-source/issues'
+        vcsUrl = 'https://github.com/sukhinin/flink-syncing-kafka-source.git'
+        licenses = ['Apache-2.0']
+        labels = ['flink', 'kafka', 'watermark', 'timestamp', 'sync']
+        githubRepo = 'sukhinin/flink-syncing-kafka-source'
+    }
+}
