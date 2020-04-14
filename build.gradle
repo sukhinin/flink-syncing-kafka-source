@@ -16,8 +16,8 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.apache.flink:flink-connector-kafka_2.12:1.9.1'
-    compileOnly 'org.apache.flink:flink-streaming-java_2.12:1.9.1'
+    implementation 'org.apache.flink:flink-connector-kafka_2.12:1.10.0'
+    compileOnly 'org.apache.flink:flink-streaming-java_2.12:1.10.0'
 }
 
 java {
